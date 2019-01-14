@@ -1,0 +1,55 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "Basic Template for Node.js Projects",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./dev.js",
+    "start": "rimraf ./dist && babel -d ./dist ./src -s && node dist/index.js",
+    "lint:js": "eslint ./src",
+    "lint-staged": "lint-staged"
+  },
+  "author": "Volodymyr Sen <volodymyr.sen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-import": "^2.14.0",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.9",
+    "pre-commit": "^1.2.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    }
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^2.6.3"
+  },
+  "pre-commit": "lint-staged",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# node modules
+node_modules
+
+# auto-generated files and folders
+build
+dist
+npm-debug.log
